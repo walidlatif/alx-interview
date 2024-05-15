@@ -1,42 +1,89 @@
-Curriculum <br>
-**Short Specializations** <br>
+# :book: 0x09. Island Perimeter.
+## :page_with_curl: Topics Covered.
+Prime game interview question.
 
-# 0x0A. Prime Game
+# :computer: Tasks.
+<!---->
+## [0. Prime Game](0-prime_game.py)
+### :page_with_curl: Task requirements.
+Maria and Ben are playing a game. Given a set of consecutive integers starting from `1` up to and including `n`, they take turns choosing a prime number from the set and removing that number and its multiples from the set. The player that cannot make a move loses the game.
 
-`Algorithm` `Python`
+They play `x` rounds of the game, where `n` may be different for each round. Assuming Maria always goes first and both players play optimally, determine who the winner of each game is.
 
-#### Concepts
+* Prototype: `def isWinner(x, nums)`
+* where `x` is the number of rounds and `nums` is an array of `n`
+* Return: name of the player that won the most rounds
+* If the winner cannot be determined, return `None`
+* You can assume `n` and `x` will not be larger than 10000
+* You cannot import any packages in this task
 
-_For this project, look at these concepts:_
+Example:
 
-* [Technical Interview](https://www.alx-intranet.hbtn.io/concepts/100005)
+* `x` = `3`, `nums` = `[4, 5, 1]`
 
-## General Requirements
+First round: `4`
 
-* Allowed editors: `vi`, `vim`, `emacs`
-* Files interpreted/compiled on Ubuntu 14.04 LTS using `python3` (version 3.4.3)
-* Files should end with a new line
-* Files first line exactly shebang `#!/usr/bin/python3`
-* `README.md` file mandatory
-* Code documented and using `PEP 8` style (version 1.7.x)
-* Files executable
+* Maria picks 2 and removes 2, 4, leaving 1, 3
+* Ben picks 3 and removes 3, leaving 1
+* Ben wins because there are no prime numbers left for Maria to choose
 
-## General Learning & Setup
+Second round: `5`
 
-`python.py`
-<details>
-  <summary>Click to show/hide file contents</summary>
+* Maria picks 2 and removes 2, 4, leaving 1, 3, 5
+* Ben picks 3 and removes 3, leaving 1, 5
+* Maria picks 5 and removes 5, leaving 1
+* Maria wins because there are no prime numbers left for Ben to choose
 
-  ```python
-  import sys, argv
-  if __name__ == "__main__":
+Third round: `1`
 
-  class ClassAct:
-  	pass
+* Ben wins because there are no prime numbers for Maria to choose
 
-  def fn():
-      pass
-  ```
-</details>
+**Result: Ben has the most wins**
+```
+    carrie@ubuntu:~/0x0A-primegame$ cat main_0.py
+    #!/usr/bin/python3
+    
+    isWinner = __import__('0-prime_game').isWinner
+    
+    
+    print("Winner: {}".format(isWinner(5, [2, 5, 1, 4, 3])))
+    
+    carrie@ubuntu:~/0x0A-primegame$
+```
 
-## Finally...
+```
+    carrie@ubuntu:~/0x0A-primegame$ ./main_0.py
+    Winner: Ben
+    carrie@ubuntu:~/0x0A-primegame$
+```
+
+**Repo:**
+
+* GitHub repository: `alx-interview`
+* Directory: `0x0A-primegame`
+* File: `0-prime_game.py`
+
+
+### :wrench: Task setup.
+```bash
+# Create solution file.
+touch 0-prime_game.py
+chmod +x 0-prime_game.py
+
+# Lint.
+pep8 0-prime_game.py
+
+# Test.
+touch 0-main.py
+chmod +x 0-main.py
+./0-main.py
+```
+
+# :man: Author and Credits.
+This project was done by [SE. Moses Mwangi](https://github.com/MosesSoftEng). Feel free to get intouch with me;
+
+:iphone: WhatsApp [+254115227963](https://wa.me/254115227963)
+
+:email: Email [moses.soft.eng@gmail.com](mailto:moses.soft.eng@gmail.com)
+
+:thumbsup: A lot of thanks to [ALX-Africa Software Engineering](https://www.alxafrica.com/) program for the project requirements.
